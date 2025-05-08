@@ -11,3 +11,9 @@ function getComputerChoice() {
 }
 
 console.log(getComputerChoice())
+getHumanChoice();
+
+
+function getHumanChoice() {
+  let userChoice = prompt("Triff deine Wahl!");
+}
