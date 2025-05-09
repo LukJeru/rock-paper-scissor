@@ -15,5 +15,15 @@ getHumanChoice();
 
 
 function getHumanChoice() {
-  let userChoice = prompt("Triff deine Wahl!");
+  const choices = ["stein", "schere", "papier"];
+  let userChoice;
+  do {
+    userChoice = prompt("Triff deine Wahl!");
+    userChoice = userChoice.toLowerCase()
+    if (choices.includes(userChoice)) {
+      console.log(`Input accepted, you chose ${userChoice}`)
+    } else {
+      console.log(`Invalid input: ${userChoice}. Choose one of the following: Schere, Stein, Papier.`)
+    }
+  } while(!choices.includes(userChoice))
 }
