@@ -11,11 +11,6 @@ function getComputerChoice() {
 
 }
 
-let humanScore = 0;
-let computerScore = 0;
-
-console.log(getComputerChoice())
-getHumanChoice();
 
 //function runs until the user puts in a valid choice
 function getHumanChoice() {
@@ -35,3 +30,47 @@ function getHumanChoice() {
   } while(!choices.includes(userChoice.toLowerCase()))
   return userChoice;
 }
+
+//score variables
+let humanScore = 0;
+let computerScore = 0;
+
+//function to play the game
+function playRound() {
+  //save choices in two variables
+  const computerChoice = getComputerChoice();
+  const humanChoice = getHumanChoice();
+  console.log(`Computer choice: ${computerChoice} human choice: ${humanChoice}`);
+  //compare choices and determine who wins
+  //check for a draw
+  if(computerChoice === humanChoice) {
+    console.log("Draw. Nobody gets any points.")
+  } else if(computerChoice === "Schere") {
+    if(humanChoice === "Papier") {
+      console.log("You loose the computer gets a point.");
+      computerScore++;
+    } else {
+      console.log("You won and get a point.");
+      humanScore++;
+    }
+  } else if(computerChoice === "Stein") {
+    if(humanChoice === "Schere") {
+      console.log("You loose the computer gets a point.");
+      computerScore++;
+    } else {
+      console.log("You won and get a point.");
+      humanScore++;
+    }
+  } else { //if it's not a draw and the computer chose neither schere nor stein, paper is the only possibility left
+    if(humanChoice === "Stein") {
+      console.log("You loose the computer gets a point.");
+      computerScore++;
+    } else {
+      console.log("You won and get a point.");
+      humanScore++;
+    }
+  }
+}
+
+//function call to play
+playRound();
