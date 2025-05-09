@@ -1,3 +1,4 @@
+//computer choice depending on a random number from 0 to 2
 function getComputerChoice() {
   const number = Math.floor(Math.random() * 3);
   if (number === 0) {
@@ -13,7 +14,7 @@ function getComputerChoice() {
 console.log(getComputerChoice())
 getHumanChoice();
 
-
+//function runs until the user puts in a valid choice
 function getHumanChoice() {
   const choices = ["stein", "schere", "papier"];
   let userChoice;
