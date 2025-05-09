@@ -33,4 +33,5 @@ function getHumanChoice() {
       console.log(`Invalid input: ${userChoice}. Choose one of the following: Schere, Stein, Papier.`)
     }
   } while(!choices.includes(userChoice.toLowerCase()))
+  return userChoice;
 }
