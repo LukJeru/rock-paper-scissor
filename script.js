@@ -31,10 +31,6 @@ function getHumanChoice() {
   return userChoice;
 }
 
-//score variables
-let humanScore = 0;
-let computerScore = 0;
-
 //function to play the game
 function playRound() {
   //save choices in two variables
@@ -72,5 +68,14 @@ function playRound() {
   }
 }
 
+//score variables
+let humanScore = 0;
+let computerScore = 0;
+
+//for-loop to play five rounds
+for(let i = 0; i < 5; i++) {
+  playRound();
+  console.log(`Human Score: ${humanScore}`);
+  console.log(`Computer Score: ${computerScore}`);
+}
 //function call to play
-playRound();
