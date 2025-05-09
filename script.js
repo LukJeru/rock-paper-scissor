@@ -73,9 +73,19 @@ let humanScore = 0;
 let computerScore = 0;
 
 //for-loop to play five rounds
-for(let i = 0; i < 5; i++) {
-  playRound();
-  console.log(`Human Score: ${humanScore}`);
-  console.log(`Computer Score: ${computerScore}`);
+function playGame() {
+  for(let i = 0; i < 5; i++) {
+    playRound();
+    console.log(`Human Score: ${humanScore}`);
+    console.log(`Computer Score: ${computerScore}`);
+  }
+  if(humanScore > computerScore) {
+    console.log("Congratulations, you won!")
+  } else if (computerScore > humanScore){
+    console.log("Sorry but the computer was better than you!")
+  } else {
+    console.loe("It's a draw.")
+  }
 }
 //function call to play
+playGame();
