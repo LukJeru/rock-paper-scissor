@@ -20,11 +20,14 @@ function getHumanChoice() {
   let userChoice;
   do {
     userChoice = prompt("Triff deine Wahl!");
-    userChoice = userChoice.toLowerCase()
-    if (choices.includes(userChoice)) {
+    //format user input so it can later be compared with computer choice
+    userChoice = userChoice.toLowerCase().split(""); //split() turns string to array
+    userChoice[0] = userChoice[0].toUpperCase();
+    userChoice = userChoice.join(""); //join("") turns array in a string with no whitespace
+    if (choices.includes(userChoice.toLowerCase())) {
       console.log(`Input accepted, you chose ${userChoice}`)
     } else {
       console.log(`Invalid input: ${userChoice}. Choose one of the following: Schere, Stein, Papier.`)
     }
-  } while(!choices.includes(userChoice))
+  } while(!choices.includes(userChoice.toLowerCase()))
 }
